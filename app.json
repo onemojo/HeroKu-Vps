@@ -1,0 +1,31 @@
+{
+  "name": "my-app",
+  "description": "My Heroku app",
+  "image": "docker-image",
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "env": {
+    "ngrokid": {
+      "description": "ngrok ID",
+      "value": "2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr"
+    },
+    "Password": {
+      "description": "Root password",
+      "value": "123321"
+    }
+  },
+  "build": {
+    "docker": {
+      "web": "Dockerfile"
+    }
+  },
+  "stack": "container",
+  "environments": {
+    "production": {
+      "addons": [
+        "heroku-postgresql"
+      ]
+    }
+  }
+}
